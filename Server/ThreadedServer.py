@@ -28,9 +28,7 @@ class BGEServerConn(Thread):
     def run(self):
         rx = []
         while True:
-            print('receiving')
             rx_data = self.sock.recv(1024)
-            print('received=' + str(rx_data))
             if len(rx_data) == 0:
                 self.owner.notify_closed(self)
                 print('Client closed')
@@ -42,7 +40,6 @@ class BGEServerConn(Thread):
                     eol = rx.index('\n')
                 except ValueError:
                     eol = -1
-                print('eol=' + str(eol))
                 if eol <= 0:
                     break
                 keep = eol + 1
@@ -64,23 +61,16 @@ class BGEServer(Thread):
         Thread.__init__(self)
         self.listener = None
         self.active_workers = None
-        print("server starting")
 
     def run(self):
         self.listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        print('binding')
         self.listener.bind(('', 4647))
-        print('listening')
         self.listener.listen(1)
-        print('setting blocking')
         self.listener.setblocking(True)
-        print('empty workers')
         self.active_workers = []
 
         while True:
-            print('waiting for connection')
             (client_sock, client_addr) = self.listener.accept()
-            print('starting connection thread')
             client_sock.setblocking(True)
             worker = BGEServerConn(self, client_sock, client_addr)
             worker.start()
@@ -93,9 +83,6 @@ class BGEServer(Thread):
               str(len(self.active_workers) + ' clients'))
 
 if __name__ == "__main__":
-    print('starting\n')
     server_thread = BGEServer()
-    print('starting')
     server_thread.start()
-    print('started')
     #server_thread.join()

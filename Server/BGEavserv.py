@@ -5,7 +5,7 @@
 import ModuleFinder###### Check for Files .
 import socket####                                                                                                       #
 ipser = (socket.gethostbyname(socket.gethostname()))
-print (ipser)
+# print (ipser)
 import threading#                                                                                                       #
 import time######                                                                                                       #
 import pyaudio###
@@ -1064,4 +1064,4 @@ class ThreadedServer(object):#_____
 sdt  = SysDateTime()#_______________________
 print('Server Started. ', sdt.currentdate())#
 if __name__ == "__main__":#_______________________
-    ThreadedServer("", 12346).listen()#
+    ThreadedServer(ipser, 12346).listen()#

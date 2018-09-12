@@ -17,129 +17,228 @@ class Main:
         self._x = None
     x = property(getx, setx, delx, " >>> 'Main' property.")
 main = Main()
+###########################################
+class Loader:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'Loader' property.")
+loader = Loader()
+########################
+class Index:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'Index' property.")
+index = Index()
 ##########################
-def ackPanelMain():#________________________Panel Loader 1._________________________________________________________:(
-    LocX = mouseLocX.get_n() + viewPortX.get_n()
-    for x in range(minLocX.get_n(), maxLocX.get_n()):#
+#
+##########################
+#
+dict_pack = []
+list_pack = []
+getpanel = []
+#
+########################
+def Panel(listing_key):#
+    listing = {
+        0: 'ackMain',
+        1: 'ackEnter',
+        2: 'ackExit',
+        3: 'ackServer',
+        4: 'ackMeshesRigs',
+        5: 'ackArena',
+        6: 'ackProject',
+        7: 'ackClient' ,
+        8: 'ackEnd',
+        9: 'ackContact',
+    }
+    return listing[listing_key]#
+def dict_Panel():#_.........
+    #configdeltas.deletePanel(1)
+    for k in range(10):#_____________________
+        dict_pack = Panel(k)#
+        list_pack.append(dict_pack)
+    return list_pack
+########################
+#
+############################
+class MouseLocX:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'MouseLocX' property.")
+mouseLocX = MouseLocX()
+############################
+class MouseLocY:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'MouseLocY' property.")
+mouseLocY = MouseLocY()
+########################
+#
+############################
+########################
+#
+############################
+class MinLocX:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'MinLocX' property.")
+minLocX = MinLocX()
+############################
+class MaxLocX:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'MaxLocX' property.")
+maxLocX = MaxLocX()
+############################
+class MinLocY:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'MinLocY' property.")
+minLocY = MinLocY()
+############################
+class MaxLocY:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'MaxLocY' property.")
+maxLocY = MaxLocY()
+########################
+#
+############################
+########################
+#
+############################
+class ViewPortX:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'ViewPortX' property.")
+viewPortX = ViewPortX()
+############################
+class ViewPortY:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'ViewPortY' property.")
+viewPortY = ViewPortY()
+########################
+#
+############################
+############################
+class SetMouse:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'SetMouse' property.")
+setMouse = SetMouse()
+########################
+#
+############################
+###########################
+listing = {'ackMain':'0', 'ackEnter':'1', 'ackExit':'2', 'ackServer':'3',
+           'ackMeshesRigs':'4' , 'ackArena':'5',
+           'ackClient':'6', 'ackProject':'7', 'ackEnd':'8', 'ackContact':'p'}
+
+###########################
+def find_command(map, command):#
+    if command in map:#
+        main.setx(1)
+        return map[command]
+    else:#
+        main.setx(0)
+        index.delx()
+        return "no deltas"
+
+def findpanel():#
+    listing['_found'] = find_command
+    func_input = index.getx() 
+    return find_command(listing,(func_input))
+############################
+def ackPanel():#________________________Loader Model Final _________________________________________________________:(
+    LocX = mouseLocX.getx() + viewPortX.getx()
+    for x in range(minLocX.getx(), maxLocX.getx()):#
         if x == LocX:#
             x = 1
             break
-    LocY = mouseLocY.get_n() + viewPortY.get_n()
-    for y in range(minLocY.get_n(), maxLocY.get_n()):#
+    LocY = mouseLocY.getx() + viewPortY.getx()
+    for y in range(minLocY.getx(), maxLocY.getx()):#
         if y == LocY:#
             y = 1
             break
     if x + y == 2:#
-        mainLoader.set_n(setMouse.get_n())
-#
-def ackPanelEnter():#________________________Panel Loader 2.._________________________________________________________:(
-    LocX = mouseLocX.get_n() + viewPortX.get_n()
-    for x in range(enterMinLocX.get_n(), enterMaxLocX.get_n()):#
-        if x == LocX:#
-            x = 1
-            break
-    LocY = mouseLocY.get_n() + viewPortY.get_n()
-    for y in range(enterMinLocY.get_n(), enterMaxLocY.get_n()):#
-        if y == LocY:#
-            y = 1
-            break
-    if x + y == 2:#
-        enterLoader.set_n(setMouse.get_n())
-#
-def ackPanelExit():##________________________Panel Loader  3...______##________________________________________________:(
-    LocX = mouseLocX.get_n() + viewPortX.get_n()
-    for x in range(exitMinLocX.get_n(), exitMaxLocX.get_n()):## 
-        if x == LocX:##
-            x = 1
-            break
-    LocY = mouseLocY.get_n() + viewPortY.get_n()
-    for y in range(exitMinLocY.get_n(), exitMaxLocY.get_n()):##
-        if y == LocY:##
-            y = 1
-            break
-    if x + y == 2:##
-        exitLoader.set_n(setMouse.get_n())
-#
-def ackPanelEnd():##________________________Panel Loader  4....______##________________________________________________:(
-    LocX = mouseLocX.get_n() + viewPortX.get_n()
-    for x in range(endMinLocX.get_n(), endMaxLocX.get_n()):## 
-        if x == LocX:##
-            x = 1
-            break
-    LocY = mouseLocY.get_n() + viewPortY.get_n()
-    for y in range(endMinLocY.get_n(), endMaxLocY.get_n()):##
-        if y == LocY:##
-            y = 1
-            break
-    if x + y == 2:##
-        endLoader.set_n(setMouse.get_n())
-#
-def ackPanelServer():##________________________Panel Loader  5.....______##________________________________________________:(
-    LocX = mouseLocX.get_n() + viewPortX.get_n()
-    for x in range(serverMinLocX.get_n(), serverMaxLocX.get_n()):## 
-        if x == LocX:##
-            x = 1
-            break
-    LocY = mouseLocY.get_n() + viewPortY.get_n()
-    for y in range(serverMinLocY.get_n(), serverMaxLocY.get_n()):##
-        if y == LocY:##
-            y = 1
-            break
-    if x + y == 2:##
-        serverLoader.set_n(setMouse.get_n())
-#
-def ackPanelMeshesRigs():##________________________Panel Loader  6......______##________________________________________________:(
-    LocX = mouseLocX.get_n() + viewPortX.get_n()
-    for x in range(meshesRigsMinLocX.get_n(), meshesRigsMaxLocX.get_n()):## 
-        if x == LocX:##
-            x = 1
-            break
-    LocY = mouseLocY.get_n() + viewPortY.get_n()
-    for y in range(meshesRigsMinLocY.get_n(), meshesRigsMaxLocY.get_n()):##
-        if y == LocY:##
-            y = 1
-            break
-    if x + y == 2:##
-        meshesRigsLoader.set_n(setMouse.get_n())
-#
-def ackPanelArena():##________________________Panel Loader  7.......______##________________________________________________:(
-    LocX = mouseLocX.get_n() + viewPortX.get_n()
-    for x in range(arenaMinLocX.get_n(), arenaMaxLocX.get_n()):## 
-        if x == LocX:##
-            x = 1
-            break
-    LocY = mouseLocY.get_n() + viewPortY.get_n()
-    for y in range(arenaMinLocY.get_n(), arenaMaxLocY.get_n()):##
-        if y == LocY:##
-            y = 1
-            break
-    if x + y == 2:##
-        arenaLoader.set_n(setMouse.get_n())  
-#
-def ackPanelClient():##________________________Panel Loader  7.......______##________________________________________________:(
-    LocX = mouseLocX.get_n() + viewPortX.get_n()
-    for x in range(clientMinLocX.get_n(), clientMaxLocX.get_n()):## 
-        if x == LocX:##
-            x = 1
-            break
-    LocY = mouseLocY.get_n() + viewPortY.get_n()
-    for y in range(clientMinLocY.get_n(), clientMaxLocY.get_n()):##
-        if y == LocY:##
-            y = 1
-            break
-    if x + y == 2:##
-        clientLoader.set_n(setMouse.get_n()) 
-#
-def ackPanelProject():##________________________Panel Loader  7.......______##________________________________________________:(
-    LocX = mouseLocX.get_n() + viewPortX.get_n()
-    for x in range(projectMinLocX.get_n(), projectMaxLocX.get_n()):## 
-        if x == LocX:##
-            x = 1
-            break
-    LocY = mouseLocY.get_n() + viewPortY.get_n()
-    for y in range(projectMinLocY.get_n(), projectMaxLocY.get_n()):##
-        if y == LocY:##
-            y = 1
-            break
-    if x + y == 2:##
-        projectLoader.set_n(setMouse.get_n()) 
+        loader.setx(setMouse.getx())
+########################
+

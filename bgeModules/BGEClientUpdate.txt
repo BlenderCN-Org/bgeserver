@@ -1,3 +1,4 @@
+ackpanel.py
 registername.py
 log.py
 opt.py
@@ -92,7 +93,6 @@ mapscreen.py
 inventory.py
 content.py
 tracker.py
-ackpanel.py
 plld.py
 arenautils.py
 servers.py

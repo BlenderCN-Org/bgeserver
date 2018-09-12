@@ -56,7 +56,7 @@ listing = {'gstar':'0', 'time':'1', 'dir':'2', 'upload':'3', 'download':'4' , 's
            'module':'11', 'socket size':'12', 'get file size':'13', 'set codec':'14', 'live mic':'15',
            'server*stream':'16', 'recorder off':'17', 'soundlist':'18'}
 ###########################
-def find_command (map, command):#
+def find_command(map, command):#
     if command in map:#
         return map[command]
     else:#
