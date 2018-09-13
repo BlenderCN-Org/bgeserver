@@ -1,0 +1,5 @@
+#!/bin/bash
+killall python
+(cd Server && PYTHONPATH=$PWD/avmodules python3 BGEavserv.py) &
+(cd Server && PYTHONPATH=$PWD/avmodules python3 BGEservers2018.py) &
+
