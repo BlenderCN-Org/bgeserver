@@ -4,7 +4,8 @@
 #########################################################################################################################
 import ModuleFinder###### Check for Files .
 import socket####                                                                                                       #
-ipser = (socket.gethostbyname(socket.gethostname()))
+ipser = ''
+#(socket.gethostbyname(socket.gethostname()))
 # print (ipser)
 import threading#                                                                                                       #
 import time######                                                                                                       #
