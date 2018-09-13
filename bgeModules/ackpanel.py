@@ -103,9 +103,6 @@ mouseLocY = MouseLocY()
 ########################
 #
 ############################
-########################
-#
-############################
 class MinLocX:
     def __init__(self):
         self._x = None
@@ -157,9 +154,6 @@ class MaxLocY:
         self._x = None
     x = property(getx, setx, delx, " >>> 'MaxLocY' property.")
 maxLocY = MaxLocY()
-########################
-#
-############################
 ########################
 #
 ############################
@@ -218,7 +212,7 @@ def find_command(map, command):#
         main.setx(1)
         return map[command]
     else:#
-        main.setx(0)
+        main.delx()
         index.delx()
         return "no deltas"
 
@@ -239,6 +233,8 @@ def ackPanel():#________________________Loader Model Final _____________________
             y = 1
             break
     if x + y == 2:#
-        loader.setx(setMouse.getx())
-########################
+        loader.setx(1)
+    else:#
+        loader.delx()
+    ########################
 

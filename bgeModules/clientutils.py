@@ -40,3 +40,23 @@ class SysDateTime(object):#
         return self.minut#
     def currenthour(self):#
         return self.hour# 
+		
+		
+def reQuotes(data):#________________________________:(
+    return str(data).replace('"', ' ').replace('"', ' ')
+def setPipes(data):#____________________________________:(
+    return str(data).replace('[', '| ').replace(']', ' |')
+def cleanlist2(list2):#_____________________________:(
+    return str(list2).replace('[', '').replace(']', '')
+def remcomma(comma):#_________________:(
+    return str(comma).replace(',', ' ')
+def addcomma(comma):#_________________:(
+    return str(comma).replace('[]', ',')
+def whitespace(wspace):#________________
+    return str(wspace).replace('[]', ',')
+def emptyslot(empty):#_______________:(
+    return str(empty).replace('[]', ',')
+def bracket(list1):#_____________________________:(
+    return str(list1).replace('', '(').replace('', ')')
+def rebracket(list1):#_____________________________:(
+    return str(list1).replace('(', '').replace(')', '')		
