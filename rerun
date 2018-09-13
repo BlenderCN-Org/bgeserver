@@ -1,6 +1,12 @@
 #!/bin/bash
-killall python
-killall python3
-(cd Server && PYTHONPATH=$PWD/avmodules python3 BGEavserv.py) &
-(cd Server && PYTHONPATH=$PWD/avmodules python3 BGEservers2018.py) &
+if which python3.5; then
+	pyexe=python3.5
+else if which python3; then
+	pyexe=python3
+else
+	exit 1
+fi
+killall $pyexe
+(cd Server && PYTHONPATH=$PWD/avmodules $pyexe BGEavserv.py) &
+(cd Server && PYTHONPATH=$PWD/avmodules $pyexe BGEservers2018.py) &
 
