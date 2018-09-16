@@ -218,7 +218,7 @@ def find_command(map, command):#
 
 def findpanel():#
     listing['_found'] = find_command
-    func_input = index.getx() 
+    func_input = index.getx()
     return find_command(listing,(func_input))
 ############################
 def ackPanel():#________________________Loader Model Final _________________________________________________________:(
@@ -234,7 +234,6 @@ def ackPanel():#________________________Loader Model Final _____________________
             break
     if x + y == 2:#
         loader.setx(1)
-    else:#
-        loader.delx()
+
     ########################
 
