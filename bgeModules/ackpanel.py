@@ -67,7 +67,6 @@ def Panel(listing_key):#
     }
     return listing[listing_key]#
 def dict_Panel():#_.........
-    #configdeltas.deletePanel(1)
     for k in range(10):#_____________________
         dict_pack = Panel(k)#
         list_pack.append(dict_pack)
@@ -221,19 +220,21 @@ def findpanel():#
     func_input = index.getx()
     return find_command(listing,(func_input))
 ############################
-def ackPanel():#________________________Loader Model Final _________________________________________________________:(
-    LocX = mouseLocX.getx() + viewPortX.getx()
+def ackLoader():#________________________Loader Model Final _________________________________________________________:(
+    LocX = int(mouseLocX.getx() + viewPortX.getx())
     for x in range(minLocX.getx(), maxLocX.getx()):#
         if x == LocX:#
             x = 1
             break
-    LocY = mouseLocY.getx() + viewPortY.getx()
+    LocY = int(mouseLocY.getx() + viewPortY.getx())
     for y in range(minLocY.getx(), maxLocY.getx()):#
         if y == LocY:#
             y = 1
             break
     if x + y == 2:#
-        loader.setx(1)
+        loader.setx(setMouse.getx())
 
     ########################
 
+
+    
