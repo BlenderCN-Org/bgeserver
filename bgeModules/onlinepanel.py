@@ -3,8 +3,9 @@
 # Blender 2.79 onlinepanel.py
 # 
 # Last update :
-import mouse
+import mouseclick
 import renderview
+import mouse
 def ackPanelSinglePass():#
     mouseX, mouseY = mouse.vecMouse(mouse)
     LocX = mouseX
@@ -19,6 +20,7 @@ def ackPanelSinglePass():#
             break
     if x + y == 2:#
         renderview.setSingle(1)
+        mouseclick.online.setx(1)
 def ackPanelMultiPass():#
     mouseX, mouseY = mouse.vecMouse(mouse)
     LocX = mouseX
@@ -32,4 +34,5 @@ def ackPanelMultiPass():#
             y = 1
             break
     if x + y == 2:#
+        mouseclick.online.setx(1)
         renderview.setMulti(1)        

@@ -86,6 +86,7 @@ class MouseLocX:
         self._x = None
     x = property(getx, setx, delx, " >>> 'MouseLocX' property.")
 mouseLocX = MouseLocX()
+mouseLocX.setx(1)
 ############################
 class MouseLocY:
     def __init__(self):
@@ -99,6 +100,7 @@ class MouseLocY:
         self._x = None
     x = property(getx, setx, delx, " >>> 'MouseLocY' property.")
 mouseLocY = MouseLocY()
+mouseLocY.setx(1)
 ########################
 #
 ############################
@@ -114,6 +116,7 @@ class MinLocX:
         self._x = None
     x = property(getx, setx, delx, " >>> 'MinLocX' property.")
 minLocX = MinLocX()
+minLocX.setx(1) 
 ############################
 class MaxLocX:
     def __init__(self):
@@ -127,6 +130,7 @@ class MaxLocX:
         self._x = None
     x = property(getx, setx, delx, " >>> 'MaxLocX' property.")
 maxLocX = MaxLocX()
+maxLocX.setx(1) 
 ############################
 class MinLocY:
     def __init__(self):
@@ -140,6 +144,7 @@ class MinLocY:
         self._x = None
     x = property(getx, setx, delx, " >>> 'MinLocY' property.")
 minLocY = MinLocY()
+minLocY.setx(1) 
 ############################
 class MaxLocY:
     def __init__(self):
@@ -153,6 +158,7 @@ class MaxLocY:
         self._x = None
     x = property(getx, setx, delx, " >>> 'MaxLocY' property.")
 maxLocY = MaxLocY()
+maxLocY.setx(1) 
 ########################
 #
 ############################
@@ -168,6 +174,7 @@ class ViewPortX:
         self._x = None
     x = property(getx, setx, delx, " >>> 'ViewPortX' property.")
 viewPortX = ViewPortX()
+viewPortX.setx(1)
 ############################
 class ViewPortY:
     def __init__(self):
@@ -181,6 +188,7 @@ class ViewPortY:
         self._x = None
     x = property(getx, setx, delx, " >>> 'ViewPortY' property.")
 viewPortY = ViewPortY()
+viewPortY.setx(1)
 ########################
 #
 ############################

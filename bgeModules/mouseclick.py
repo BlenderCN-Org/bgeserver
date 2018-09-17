@@ -15,6 +15,18 @@ class Main:
         self._x = None
     x = property(getx, setx, delx, " >>> 'Main' property.")
 main = Main()
+class SetMouse:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'SetMouse' property.")
+setMouse = SetMouse()
 class Rclick:
     def __init__(self):
         self._x = None
@@ -39,3 +51,16 @@ class Lclick:
         self._x = None
     x = property(getx, setx, delx, " >>> 'Lclick' property.")
 ltclick = Lclick()
+class Online:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'Online' property.")
+online = Online()
+online.setx(0)
