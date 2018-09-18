@@ -205,6 +205,7 @@ class SetMouse:
         self._x = None
     x = property(getx, setx, delx, " >>> 'SetMouse' property.")
 setMouse = SetMouse()
+setMouse.setx(0)
 ########################
 #
 ############################

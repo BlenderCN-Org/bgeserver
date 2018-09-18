@@ -9,6 +9,8 @@ import math
 import ackpanel
 import config
 import threading
+import mouseclick
+#import filesys
 class Main:
     def __init__(self):
         self._x = None
@@ -170,9 +172,17 @@ def camera90():#_____________________________:(
 #___________________________________________________________________________________________
 def mainPanel():#____________________________________________________ Main Loader Section . ___________________________:(
     mainloader.setx(1)
+    #panelPlate.mouseEnter()
+    #panelPlate.mouseExit()
+    ackpanel.setMouse.setx(1)
+    render.showMouse(1)
 #______________________________________________________________________________________________
 def ackEnter():#_
     enterloader.setx(1)
+
+    mouseclick.rtclick.setx(1)
+
+    render.showMouse(1)
 #______________________________________________________________________________________________
 def ackExit():#_
     exitloader.setx(1)

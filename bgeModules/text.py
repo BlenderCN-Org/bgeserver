@@ -3,6 +3,24 @@
 # Blender 2.79 text.py
 # 
 # Last update :
+from bge import logic, render
+import math
+import ackpanel
+import threading
+import mouseclick
+import textpanel
+class TextOpt:
+    def __init__(self):
+        self._x = None
+    def getx(self):
+        return self._x
+    def setx(self, value):
+        self._x = value
+    def delx(self):
+        del self._x
+        self._x = None
+    x = property(getx, setx, delx, " >>> 'TextOpt' property.")
+textopt = TextOpt()
 def InputConsole():#
     n = 0
     def func():#
@@ -21,13 +39,11 @@ def getConsole(text):#
     text = inputConsole.get_n()
     return text
 inputConsole = InputConsole()
-
-
-class Text:#_________________________Text Text Text Text_______________________________________________________:(
+class Plate:#_________________________Text Text Text Text_______________________________________________________:(
     def __init__(self):#____________________________________________:(    
         self.text = 0
     def camera90(self):#____________camera90____________:(
-        print(' >>> set_Camera.Angle z axes 90 .')
+        ''' >>> set_Camera.Angle z axes 90 .'''
         Zangle = 90
         scene = logic.getCurrentScene()
         camera = scene.objects["Camera.001"]#
@@ -40,39 +56,36 @@ class Text:#_________________________Text Text Text Text________________________
         arena = scene.objects["Camera.001"]        
         spawner = scene.objects["SpawnerMainMenu"]
         arena.position = spawner.worldPosition
-        #cursorOpt.set_n(0)
-        rightClickOpt.set_n(1)
+        mouseclick.rtclick.setx(1)
         ackpanel.setMouse.setx(1)
-        setMouse.set_n(1)
-        mouseOpt.set_n(1)
-        if panelLoaderOpt.get_n() == 0:#
-            self.set_mainPanelLoader()
+        mouseclick.ltclick.setx(1)
+        ackpanel.setMouse.setx(1)
+        render.showMouse(0)
+        #self.set_mainPanelLoader()
     def set_mainPanelLoader(self):#__________________________set_mainPanelLoader.___________________________:(
         render.showMouse(1)
-        if consoleOpt.get_n() == 0:#
-            panelPlate.mainHeader()
-            panelPlate.serverStart()
-            panelPlate.meshesRigsClient()
-            panelPlate.arenaClient()
-            panelPlate.projectClient()
-            panelPlate.serviceClient()
-            panelPlate.endClient()
+        textpanel.panelplate.mainHeader()
+        textpanel.panelplate.serverStart()
+        textpanel.panelplate.meshesRigsClient()
+        textpanel.panelplate.arenaClient()
+        textpanel.panelplate.projectClient()
+        textpanel.panelplate.serviceClient()
+        textpanel.panelplate.endClient()
     def callServer(self):#____________________________callServer .___________________________:(
         self.camera90()
-        print(' >>> call.Server ')
+        ''' >>> call.Server '''
         scene = logic.getCurrentScene()
         spawnArea = scene.objects["Camera.001"]        
         spawner = scene.objects["SpawnerSND"]
         spawnArea.position = spawner.worldPosition          
     def introWelcome(self):#___________________________ introWelcome .___________________________:(
         self.camera90()
-        print(' >>> Camera.IntroWelcome ')
+        ''' >>> Camera.IntroWelcome '''
         scene = logic.getCurrentScene()
         place = scene.objects["Camera.001"]        
         spawner = scene.objects["SpawnerWelcome"]
         place.position = spawner.worldPosition
     def introOffline(self):#___________________________introOffline .___________________________:(
-        #self.camera90()
         scene = logic.getCurrentScene()
         place = scene.objects["Camera.001"]        
         spawner = scene.objects["SpawnerOffLine"]
@@ -90,13 +103,14 @@ class Text:#_________________________Text Text Text Text________________________
             spawner = scene.objects["SpawnerMainMenu"]
             arena.position = spawner.worldPosition
         def startMenu():#
-            print(' >>> start.SpawnExitArena . ')
+            ''' >>> start.SpawnExitArena . '''
             autoStartExitClient()
             def endMenu():#
-                print(' >>> end.SpawnExitArena . ')
+                ''' >>> end.SpawnExitArena . '''
                 autoEndExitClient()
             endMain = threading.Timer(1.4, endMenu)
             endMain.start()
         startMain = threading.Timer(0.3, startMenu)
         startMain.start()
 
+plate = Plate()
