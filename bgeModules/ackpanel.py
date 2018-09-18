@@ -5,6 +5,7 @@
 # Last update 
 #
 ###########################################
+import ackpanel
 class Main:
     def __init__(self):
         self._x = None
@@ -242,7 +243,7 @@ def ackLoader():#________________________Loader Model Final ____________________
             break
     if x + y == 2:#
         loader.setx(setMouse.getx())
-
+        findpanel()
     ########################
 
 
