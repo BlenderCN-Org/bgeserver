@@ -174,7 +174,7 @@ def mainPanel():#____________________________________________________ Main Loade
     mainloader.setx(1)
     #panelPlate.mouseEnter()
     #panelPlate.mouseExit()
-    ackpanel.setMouse.setx(1)
+    #ackpanel.setMouse.setx(1)
     render.showMouse(1)
 #______________________________________________________________________________________________
 def ackEnter():#_
