@@ -60,7 +60,7 @@ class Plate:#_________________________Text Text Text Text_______________________
         ackpanel.setMouse.setx(1)
         mouseclick.ltclick.setx(1)
         ackpanel.setMouse.setx(1)
-        render.showMouse(0)
+        render.showMouse(1)
         #self.set_mainPanelLoader()
     def set_mainPanelLoader(self):#__________________________set_mainPanelLoader.___________________________:(
         render.showMouse(1)

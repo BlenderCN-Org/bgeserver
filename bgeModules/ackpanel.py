@@ -5,7 +5,7 @@
 # Last update 
 #
 ###########################################
-import ackpanel
+
 class Main:
     def __init__(self):
         self._x = None
