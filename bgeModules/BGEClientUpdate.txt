@@ -1,4 +1,3 @@
-ackpanel.py
 registername.py
 log.py
 opt.py
@@ -93,7 +92,6 @@ mapscreen.py
 inventory.py
 content.py
 tracker.py
-plld.py
 arenautils.py
 servers.py
 dictchange.py
@@ -110,3 +108,7 @@ idserv.py
 servfunc.py
 empty.py
 wintext.py
+plld.py
+ackpanel.py
+textpanel.py
+text.py
