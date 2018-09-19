@@ -10,7 +10,8 @@ import ackpanel
 import config
 import threading
 import mouseclick
-#import filesys
+import text
+import filesys
 class Main:
     def __init__(self):
         self._x = None
@@ -172,20 +173,36 @@ def camera90():#_____________________________:(
 #___________________________________________________________________________________________
 def mainPanel():#____________________________________________________ Main Loader Section . ___________________________:(
     mainloader.setx(1)
-    #panelPlate.mouseEnter()
-    #panelPlate.mouseExit()
-    #ackpanel.setMouse.setx(1)
+    text.plate.callServer()
     render.showMouse(1)
 #______________________________________________________________________________________________
 def ackEnter():#_
     enterloader.setx(1)
-
+    def yesServer():#
+        text.plate.callServer()
+        filesys.startserver.getx()
+    yesCall = threading.Timer(1.7, yesServer)
+    yesCall.start()
     mouseclick.rtclick.setx(1)
-
+    render.showMouse(0)
+    text.plate.yesCallServer()
     render.showMouse(1)
 #______________________________________________________________________________________________
 def ackExit():#_
     exitloader.setx(1)
+    def noServer():#
+        text.plate.noCallServer()
+        #text.plate.mainMenu()
+    noCall = threading.Timer(1.3, noServer)
+    noCall.start()
+    mouseclick.rtclick.setx(1)
+    render.showMouse(0)
+    #text.plate.noCallServer()  
+    render.showMouse(1)
+    def autofService():#
+        text.plate.introOffline()
+    noServer = threading.Timer(1.5, autofService)
+    noServer.start()
 #______________________________________________________________________________________________
 def ackServer():#_
     serverloader.setx(1)
@@ -195,9 +212,15 @@ def ackMeshesRigs():#_
 #______________________________________________________________________________________________
 def ackArena():#_
     arenaloader.setx(1)
+    mouseclick.rtclick.setx(1)
+    render.showMouse(0)
+    text.plate.set_Arena()
 #______________________________________________________________________________________________
 def ackProject():#_
     projectloader.setx(1)
+    mouseclick.rtclick.setx(1)
+    render.showMouse(0)
+    text.plate.set_Project()
 #______________________________________________________________________________________________
 def ackClient():#_
     clientloader.setx(1)

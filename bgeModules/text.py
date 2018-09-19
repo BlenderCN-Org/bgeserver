@@ -40,17 +40,23 @@ def getConsole(text):#
     return text
 inputConsole = InputConsole()
 class Plate:#_________________________Text Text Text Text_______________________________________________________:(
+
     def __init__(self):#____________________________________________:(    
+
         self.text = 0
+
     def camera90(self):#____________camera90____________:(
         ''' >>> set_Camera.Angle z axes 90 .'''
+
         Zangle = 90
         scene = logic.getCurrentScene()
         camera = scene.objects["Camera.001"]#
         xyz = camera.worldOrientation.to_euler()
         xyz[2] = math.radians(Zangle)
         camera.localOrientation = xyz.to_matrix() 
+
     def mainMenu(self):#__________________________main Menu .___________________________:(
+
         self.camera90()
         scene = logic.getCurrentScene()
         arena = scene.objects["Camera.001"]        
@@ -61,23 +67,84 @@ class Plate:#_________________________Text Text Text Text_______________________
         mouseclick.ltclick.setx(1)
         ackpanel.setMouse.setx(1)
         render.showMouse(1)
-        #self.set_mainPanelLoader()
-    def set_mainPanelLoader(self):#__________________________set_mainPanelLoader.___________________________:(
-        render.showMouse(1)
-        textpanel.panelplate.mainHeader()
-        textpanel.panelplate.serverStart()
-        textpanel.panelplate.meshesRigsClient()
-        textpanel.panelplate.arenaClient()
-        textpanel.panelplate.projectClient()
-        textpanel.panelplate.serviceClient()
-        textpanel.panelplate.endClient()
+
     def callServer(self):#____________________________callServer .___________________________:(
-        self.camera90()
+
         ''' >>> call.Server '''
         scene = logic.getCurrentScene()
         spawnArea = scene.objects["Camera.001"]        
         spawner = scene.objects["SpawnerSND"]
         spawnArea.position = spawner.worldPosition          
+
+    def yesCallServer(self):
+        ''' >>> yes_call.Server . '''
+        scene = logic.getCurrentScene()
+        spawnArea = scene.objects["Camera.001"]        
+        spawner = scene.objects["SpawnerYES"]
+        spawnArea.position = spawner.worldPosition 
+
+    def noCallServer(self):
+
+        '''' >>> no_call.Server . '''
+        scene = logic.getCurrentScene()
+        spawnArea = scene.objects["Camera.001"]        
+        spawner = scene.objects["SpawnerNo"]
+        spawnArea.position = spawner.worldPosition 
+
+    def set_Arena(self):
+        ''' >>> set_ArenaPanel . '''
+        def startMenu():#
+            ''' start.ArenaPanel . '''
+            self.arenaPanel()
+            def endMenu():#
+                ''' end.ArenaPanel . '''
+                self.endArenaPanel()
+            endMain = threading.Timer(0.7, endMenu)
+            endMain.start()
+        startMain = threading.Timer(0.1, startMenu)
+        startMain.start()
+#_________________________
+    def arenaPanel(self):
+        ''' >>> server.Pass . '''
+        scene = logic.getCurrentScene()
+        textpass = scene.objects["TextArenaInfo"]        
+        spawner = scene.objects["SpawnerArenaInfo"]
+        textpass.position = spawner.worldPosition 
+#____________________________
+    def endArenaPanel(self):
+        ''' >>> end.Area . '''
+        scene = logic.getCurrentScene()
+        arenaPanel = scene.objects["TextArenaInfo"]        
+        spawner = scene.objects["SpawnerArenaInfoReturn"]
+        arenaPanel.position = spawner.worldPosition 
+
+    def set_Project(self):
+        '''' >>> set_ProjectPanel . '''
+        def startMenu():#
+            ''' start.ProjectPanel . '''
+            self.infoProject()
+            def endMenu():#
+                ''' end.ProjectPanel . '''
+                self.endProjectPanel()
+            endMain = threading.Timer(0.7, endMenu)
+            endMain.start()
+        startMain = threading.Timer(0.1, startMenu)
+        startMain.start()
+#______________________________
+    def endProjectPanel(self):
+        ''' >>> end.Area . '''
+        scene = logic.getCurrentScene()
+        projectPanel = scene.objects["TextProjectInfo.001"]        
+        spawner = scene.objects["SpawnerProjectInfoReturn"]
+        projectPanel.position = spawner.worldPosition 
+#__________________________
+    def infoProject(self):
+        self.camera90()
+        scene = logic.getCurrentScene()
+        place = scene.objects["TextProjectInfo.001"]        
+        spawner = scene.objects["SpawnerProjectInfo"]
+        place.position = spawner.worldPosition  
+
     def introWelcome(self):#___________________________ introWelcome .___________________________:(
         self.camera90()
         ''' >>> Camera.IntroWelcome '''
