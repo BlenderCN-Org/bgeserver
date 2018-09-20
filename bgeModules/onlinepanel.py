@@ -34,5 +34,5 @@ def ackPanelMultiPass():#
             y = 1
             break
     if x + y == 2:#
-        mouseclick.online.setx(1)
         renderview.setMulti(1)        
+        mouseclick.online.setx(1)

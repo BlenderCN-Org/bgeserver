@@ -6,7 +6,7 @@
 ################
 import socket
 #ipser = (socket.gethostbyname(socket.gethostname()))
-ipser = "192.168.2.45"
+ipser = "192.168.2.50"
 server_ip = ipser
 server_port = 12346
 inventory = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

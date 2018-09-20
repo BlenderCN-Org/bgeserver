@@ -18,7 +18,7 @@ def MouseX():#
     func.set_n = set_n
     return func#_#
 mouseX = MouseX()
-mouseX.set_n(1)
+
 def MouseY():#
     n = 0
     def func():#
@@ -32,7 +32,7 @@ def MouseY():#
     func.set_n = set_n
     return func#_#
 mouseY = MouseY()#
-mouseY.set_n(1)
+
 def mouseLeftClick():#
     cont = logic.getCurrentController()
     own = cont.owner
