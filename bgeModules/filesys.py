@@ -5,8 +5,9 @@
 # Last update : 
 ################
 import socket
+
 #ipser = (socket.gethostbyname(socket.gethostname()))
-ipser = "192.168.2.50"
+ipser = "192.168.2.51"
 server_ip = ipser
 server_port = 12346
 inventory = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -174,7 +175,7 @@ class Assets:#_____________________:(
 
         inventory.send(self.codec)
         self.returns()
-
+        
     def returns(self):#_________________________________________________:(
 
         while True:#

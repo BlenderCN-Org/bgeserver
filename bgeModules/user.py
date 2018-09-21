@@ -17,6 +17,7 @@ import username
 import remotename
 import clientconfig
 ipser = (socket.gethostbyname(socket.gethostname()))
+
 server_ip = ipser
 server_port = 12345
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
