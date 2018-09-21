@@ -39,12 +39,66 @@ def getConsole(text):#
     text = inputConsole.get_n()
     return text
 inputConsole = InputConsole()
+
+class RigPlates:
+    def __init__(self):#
+        self.spawnArea = 0
+    def setSpawn(self):#___________________________:
+        ''' >>> setSpawnMenu'''
+        scene = logic.getCurrentScene()
+        area = scene.objects["Camera.001"]        
+        spawner = scene.objects["SpawnArea"]
+        area.position = spawner.worldPosition  
+        spawnArea = scene.objects["TextMenSpawnArea"]
+        spawner = scene.objects["SpawnerPlateSpawnArea"]
+        spawnArea.position = spawner.worldPosition
+        meshStock = scene.objects["TextMenuMeshes"]
+        spawner = scene.objects["SpawnerPlateMeshStock"]
+        meshStock.position = spawner.worldPosition
+    def setRig1(self):#___________________________:
+        ''' >>> setRig1 '''
+        scene = logic.getCurrentScene()
+        setRig1 = scene.objects["TextRig.1"]
+        spawner = scene.objects["SpawnerSpawnMenuRig1"]
+        setRig1.position = spawner.worldPosition
+    def setRig2(self):#___________________________:
+        ''' >>> setRig2'''
+        scene = logic.getCurrentScene()
+        setRig2 = scene.objects["TextRig.2"]
+        spawner = scene.objects["SpawnerSpawnMenuRig2"]
+        setRig2.position = spawner.worldPosition
+    def setRig3(self):#___________________________:
+        ''' >>> setRig3'''
+        scene = logic.getCurrentScene()
+        setRig3 = scene.objects["TextRig.3"]
+        spawner = scene.objects["SpawnerSpawnMenuRig3"]
+        setRig3.position = spawner.worldPosition
+rigplates = RigPlates()
+
 class Plate:#_________________________Text Text Text Text_______________________________________________________:(
 
     def __init__(self):#____________________________________________:(    
 
         self.text = 0
 
+    def camera180(self):
+        ''' >>> set_Camera.Angle z axes 180 .'''
+        Zangle = 180
+        scene = logic.getCurrentScene()
+        camera = scene.objects["Camera.001"]#
+        xyz = camera.worldOrientation.to_euler()
+        xyz[2] = math.radians(Zangle)
+        camera.localOrientation = xyz.to_matrix() 
+
+    def camera360(self):
+        ''' >>> set_Camera.Angle z axes 360 .'''
+        Zangle = 360
+        scene = logic.getCurrentScene()
+        camera = scene.objects["Camera.001"]#
+        xyz = camera.worldOrientation.to_euler()
+        xyz[2] = math.radians(Zangle)
+        camera.localOrientation = xyz.to_matrix()
+        
     def camera90(self):#____________camera90____________:(
         ''' >>> set_Camera.Angle z axes 90 .'''
 
@@ -193,4 +247,96 @@ class Plate:#_________________________Text Text Text Text_______________________
         spawnArea = scene.objects["Camera.001"]        
         spawner = scene.objects["BeforeYouGo"]
         spawnArea.position = spawner.worldPosition  
+
+    def meshesRigsPanel(self):
+        ''' >>> server.Pass . '''
+        scene = logic.getCurrentScene()
+        textpass = scene.objects["TextMeshesRigs"]        
+        spawner = scene.objects["SpawnerMeshesRigs"]
+        textpass.position = spawner.worldPosition 
+
+    def set_MeshesRigs(self):
+        def startMenu():#
+            ''' start.Arena . '''
+            def endMenu():#
+                ''' end.Arena . '''
+                self.endMeshesRigs()
+            endMain = threading.Timer(0.3, endMenu)
+            endMain.start()
+        startMain = threading.Timer(1.7, startMenu)
+        startMain.start()
+        self.meshesRigsPanel()
+
+    def endMeshesRigs(self):
+        scene = logic.getCurrentScene()
+        textpass = scene.objects["TextMeshesRigs"]        
+        spawner = scene.objects["SpawnerHoldMeshesRigs"]
+        textpass.position = spawner.worldPosition 
+
+    def singleAdminLogIn(self):
+        def startMenu():#
+            ''' >>>                     <<< '''
+            '' '>>>  start.AdminLogIn . <<< '''
+            ''' >>>                     <<< '''
+            self.singleServerPass()
+            def endMenu():#
+                ''' >>>                     <<< '''
+                ''' >>>   end.AdminLogIn .  <<< '''
+                ''' >>>                     <<< '''
+                self.endSingleServerPass()
+            endMain = threading.Timer(3.7, endMenu)
+            endMain.start()
+        startMain = threading.Timer(0.1, startMenu)
+        startMain.start()
+
+    def singleServerPass(self):
+        ''' >>> server.Pass . '''
+        scene = logic.getCurrentScene()
+        textpass = scene.objects["TextSinglePass"]        
+        spawner = scene.objects["SpawnerPass"]
+        textpass.position = spawner.worldPosition 
+
+    def endSingleServerPass(self):
+        ''' >>>                     <<< '''
+        ''' >>>   end.SinglePass .  <<< '''
+        ''' >>>                     <<< '''
+        scene = logic.getCurrentScene()
+        obj1 = scene.objects["TextSinglePass"]
+        obj1.endObject()  
+
+    def multiAdminLogIn(self):
+        def startMenu():
+            ''' >>>                     <<< '''
+            ''' >>>  start.AdminLogIn . <<< '''
+            ''' >>>                     <<< '''
+            self.multiServerPass()
+            def endMenu():#
+                ''' >>>                    <<< '''
+                ''' >>>   end.AdminLogIn .  <<<'''
+                ''' >>>                    <<< '''
+                self.endMultiServerPass()
+            endMain = threading.Timer(3.7, endMenu)
+            endMain.start()
+        startMain = threading.Timer(0.1, startMenu)
+        startMain.start()
+
+#_________________________
+
+    def multiServerPass(self):
+        ''' >>> server.Pass . '''
+        scene = logic.getCurrentScene()
+        textpass = scene.objects["TextMultiPass"]        
+        spawner = scene.objects["SpawnerPass"]
+        textpass.position = spawner.worldPosition 
+
+#___________________________
+
+    def endMultiServerPass(self):
+        ''' >>>                     <<< '''
+        ''' >>>   end.MultiPass .  <<< '''
+        ''' >>>                     <<< '''
+        scene = logic.getCurrentScene()
+        obj1 = scene.objects["TextMultiPass"]
+        obj1.endObject()  
+
 plate = Plate()

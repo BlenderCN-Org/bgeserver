@@ -5,6 +5,29 @@
 # Last update :
 from bge import logic
 import serverconnect
+class MouseUser:#_____________________________________________________________________________:(
+    def __init__(self):#
+        self.user = 0
+    def count(self):#
+        self.user  = togMouse.get_n() + 1
+        togMouse.set_n(self.user)
+    def decount(self):#
+        out = togMouse.get_n() - 1
+        togMouse.set_n(out)
+mouseUser = MouseUser()
+def TogMouse():#
+    n = 0
+    def func():#
+        print('> TogMouse', n) #  
+    def get_n():#
+        return n
+    def set_n(value):#
+        nonlocal n
+        n = value
+    func.get_n = get_n
+    func.set_n = set_n
+    return func#_
+togMouse = TogMouse()
 def MouseX():#
     n = 0
     def func():#

@@ -264,7 +264,7 @@ def ackServer():#_
         #ctrl.clientconnected.setx(1)
 
         def serverCall():#
-            self.singleAdminLogIn()
+            text.plate.singleAdminLogIn()
         service = threading.Timer(0.1, serverCall)
         service.start()
   
@@ -278,13 +278,24 @@ def ackServer():#_
         #ctrl.userconnected.setx(1)
 
         def serverCall():#
-            self.multiAdminLogIn()
+            text.plate.multiAdminLogIn()
         service = threading.Timer(0.1, serverCall)
         service.start()
 
 #______________________________________________________________________________________________
 def ackMeshesRigs():#_
     meshesrigsloader.setx(1)
+
+    text.plate.camera360()
+    text.rigplates.setSpawn()
+    text.rigplates.setRig1()
+    text.rigplates.setRig2()
+    text.rigplates.setRig3()
+
+    mouseclick.rtclick.setx(1)
+    render.showMouse(0)
+    text.plate.set_MeshesRigs()
+
 #______________________________________________________________________________________________
 def ackArena():#_
     arenaloader.setx(1)
