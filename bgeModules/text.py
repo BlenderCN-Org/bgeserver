@@ -179,5 +179,18 @@ class Plate:#_________________________Text Text Text Text_______________________
             endMain.start()
         startMain = threading.Timer(0.3, startMenu)
         startMain.start()
+    def clientRequest(self):
+        ''' >>> set_clientRequest '''
+        scene = logic.getCurrentScene()
+        textstandalone = scene.objects["TextRequest"]
+        spawner = scene.objects["SpawnerServerInfo"]
+        textstandalone.position = spawner.worldPosition 
 
+    def beforeYouGo(self):#__________________________Client Off___________________________:(
+        self.camera90()
+        ''' >>> Contact Server '''
+        scene = logic.getCurrentScene()
+        spawnArea = scene.objects["Camera.001"]        
+        spawner = scene.objects["BeforeYouGo"]
+        spawnArea.position = spawner.worldPosition  
 plate = Plate()
