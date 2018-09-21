@@ -5,7 +5,7 @@
 import ModuleFinder###### Check for Files .
 import socket####                                                                                                       #
 ipser = ''
-sys.path.insert(0,'/RemoteClientServer/avmodules')
+#sys.path.insert(0,'/RemoteClientServer/avmodules')
 import threading#                                                                                                      #
 import time######                                                                                                       #
 import pyaudio###

@@ -1,12 +1,12 @@
 #!/bin/bash
 if which python3.5; then
 	pyexe=python3.5
-else if which python3; then
+elif which python3; then
 	pyexe=python3
 else
 	exit 1
 fi
 killall $pyexe
-(cd Server && PYTHONPATH=$PWD/avmodules $pyexe BGEavserv.py) &
-(cd Server && PYTHONPATH=$PWD/avmodules $pyexe BGEservers2018.py) &
+(cd Server && PYTHONPATH=$PWD/avmodules $pyexe BGEavserv.py && echo started BGEavserv.py) &
+(cd Server && PYTHONPATH=$PWD/avmodules $pyexe BGEservers2018.py && echo started BGEservers.) &
 
