@@ -209,9 +209,12 @@ endOnce = EndOnce()
 #               Panel Loader Section
 #___________________________________________________________________________________________
 def mainPanel():#____________________________________________________ Main Loader Section . ___________________________:(
+
     mainloader.setx(1)
+    ctrl.cursorentry.setx('esc.Main')
     text.plate.callServer()
     render.showMouse(1)
+
 #______________________________________________________________________________________________
 def ackEnter():#_
     enterloader.setx(1)
@@ -254,7 +257,9 @@ def ackExit():#_
     noServer.start()
 #______________________________________________________________________________________________
 def ackServer():#_
+
     serverloader.setx(1)
+    ctrl.cursorentry.setx('client pass')
     if classclient.single(classclient) == 1:#
         classclient.init_single(0)
 
@@ -284,8 +289,9 @@ def ackServer():#_
 
 #______________________________________________________________________________________________
 def ackMeshesRigs():#_
-    meshesrigsloader.setx(1)
 
+    meshesrigsloader.setx(1)
+    ctrl.cursorentry.setx('esc.Spawn')
     text.plate.camera360()
     text.rigplates.setSpawn()
     text.rigplates.setRig1()
@@ -298,19 +304,25 @@ def ackMeshesRigs():#_
 
 #______________________________________________________________________________________________
 def ackArena():#_
+
     arenaloader.setx(1)
+    ctrl.cursorentry.setx('esc.Arena')
     mouseclick.rtclick.setx(1)
     render.showMouse(0)
     text.plate.set_Arena()
 #______________________________________________________________________________________________
 def ackProject():#_
+
     projectloader.setx(1)
+    ctrl.cursorentry.setx('esc.Projects')
     mouseclick.rtclick.setx(1)
     render.showMouse(0)
     text.plate.set_Project()
 #______________________________________________________________________________________________
 def ackClient():#_
+
     clientloader.setx(1)
+    ctrl.cursorentry.setx('esc.Entry')
     mouseclick.rtclick.setx(0)
     
     def getclientCall():#
@@ -329,6 +341,7 @@ def ackClient():#_
 #______________________________________________________________________________________________
 def ackEnd():#_
     endloader.setx(1)
+    ctrl.cursorentry.setx('esc.Close')
     runserver.start(0)
     render.showMouse(0)
     mouseclick.rtclick.setx(0)
