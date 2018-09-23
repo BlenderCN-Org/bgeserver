@@ -4,7 +4,7 @@
 # 
 # Last update :
 #
-class  LibMain:
+class  Menu:
     def __init__(self):
         self._x = None
     def getx(self):
@@ -14,5 +14,5 @@ class  LibMain:
     def delx(self):
         del self._x
         self._x = None
-    x = property(getx, setx, delx, "I'm the 'x' property.")
-libmain = LibMain()
+    x = property(getx, setx, delx, " >>> 'Menu.lib")
+menu = Menu()

@@ -4,7 +4,7 @@
 # 
 # Last update :
 #
-class  BatMain:
+class  Menu:
     def __init__(self):
         self._x = None
     def getx(self):
@@ -14,5 +14,5 @@ class  BatMain:
     def delx(self):
         del self._x
         self._x = None
-    x = property(getx, setx, delx, "I'm the 'x' property.")
-batmain = BatMain()
+    x = property(getx, setx, delx, " >>> 'Menu.bat")
+menu = Menu()

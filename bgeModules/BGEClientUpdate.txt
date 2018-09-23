@@ -112,3 +112,6 @@ plld.py
 ackpanel.py
 textpanel.py
 text.py
+meshbuild.py
+dictroutines.py
+userroutine.py

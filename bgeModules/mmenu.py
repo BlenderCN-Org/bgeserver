@@ -4,7 +4,7 @@
 # 
 # Last update :
 #
-class  MMain:
+class  Routine:
     def __init__(self):
         self._x = None
     def getx(self):
@@ -14,5 +14,7 @@ class  MMain:
     def delx(self):
         del self._x
         self._x = None
-    x = property(getx, setx, delx, "I'm the 'x' property.")
-mainmenu = MMain()
+    x = property(getx, setx, delx, " >>> 'Routine")
+routine = Routine()
+
+
