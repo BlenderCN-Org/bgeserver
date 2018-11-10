@@ -7,7 +7,7 @@
 import socket
 
 #ipser = (socket.gethostbyname(socket.gethostname()))
-ipser = "192.168.2.51"
+ipser = "192.168.2.55"
 #ipser = "doug16k.com"
 server_ip = ipser
 server_port = 12346
